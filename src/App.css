@@ -1,5 +1,6 @@
 html {
   background: #828994;
+  background-image: url("./background.svg");
 }
 
 .App {
