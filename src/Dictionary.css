@@ -1,29 +1,18 @@
-.App form {
+.Dictionary h2 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.Dictionary form {
   background: #474e57;
 }
 
-.App form input {
+.Dictionary form input {
   background: #2d343c;
   color: #fff;
 }
 
-.App ul {
-  padding: 0;
-}
-
-.App li {
-  list-style: none;
-}
-
-.App .Results h2 {
-  text-transform: capitalize;
-}
-
-.App .Meaning h4 {
-  text-transform: capitalize;
-}
-
-.App .Dictionary section {
+.Dictionary section {
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   border-radius: 8px;
@@ -32,7 +21,7 @@
   margin: 20px 10px;
 }
 
-.App .Dictionary input {
+.Dictionary input {
   width: 100%;
   margin-bottom: 5px;
   border-radius: 6px;

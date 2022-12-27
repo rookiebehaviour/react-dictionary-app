@@ -5,14 +5,14 @@ body {
 
 .App {
   background: transparent;
-  background-image: url("./background.svg");
   color: #2d343c;
   margin: 30px auto;
+  width: 100%;
 }
 
 .App .container {
   background: rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
+  border-radius: 10px;
   max-width: 600px;
 }
 

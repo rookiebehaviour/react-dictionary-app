@@ -36,10 +36,12 @@ function Dictionary(props) {
     return (
       <div className="Dictionary">
         <section>
+          <h2>Lookup a word</h2>
           <form className="form-control" onSubmit={handleSubmit}>
             <input
               type="search"
               placeholder="ex. confident"
+              defaultValue={props.defaultKeyword}
               autoFocus={true}
               onChange={handleKeywordChange}
             />
