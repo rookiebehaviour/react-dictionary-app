@@ -9,7 +9,10 @@ function App() {
           <Dictionary />
         </main>
         <footer className="text-center">
-          Coded with ❤️ by Jacqueline Mason
+          <a href="https://github.com/rookiebehaviour/react-dictionary-app">
+            Open-source
+          </a>{" "}
+          and coded with ❤️ by Jacqueline Mason
         </footer>
       </div>
     </div>
