@@ -1,21 +1,36 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
+import Photos from "./Photos";
 import "./Dictionary.css";
 
 function Dictionary(props) {
   let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
   let [loaded, setLoaded] = useState(false);
+  let [photos, setPhotos] = useState(null);
 
-  function handleResponse(response) {
+  function handleDictionaryResponse(response) {
     setResults(response.data[0]);
+  }
+
+  function handlePexelsResponse(response) {
+    setPhotos(response.data.photos);
   }
 
   function search() {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
 
-    axios.get(apiUrl).then(handleResponse);
+    axios.get(apiUrl).then(handleDictionaryResponse);
+
+    const pexelsApiKey =
+      "563492ad6f9170000100000169f5ff282def4fcf9d4c72ab7dd1e6fa";
+
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
+
+    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
+
+    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
   }
 
   function handleSubmit(event) {
@@ -38,17 +53,24 @@ function Dictionary(props) {
         <section>
           <h2>Lookup a word</h2>
           <form className="form-control" onSubmit={handleSubmit}>
-            <input
-              type="search"
-              placeholder="ex. confident"
-              defaultValue={props.defaultKeyword}
-              autoFocus={true}
-              onChange={handleKeywordChange}
-            />
-            <input type="submit" value="Search" />
+            <div className="row">
+              <div className="col-9 p-1">
+                <input
+                  type="search"
+                  placeholder="ex. confident"
+                  defaultValue={props.defaultKeyword}
+                  autoFocus={true}
+                  onChange={handleKeywordChange}
+                />
+              </div>
+              <div className="col-3 p-1">
+                <input type="submit" value="Search" />
+              </div>
+            </div>
           </form>
         </section>
         <Results results={results} />
+        <Photos photos={photos} keyword={keyword} />
       </div>
     );
   } else {

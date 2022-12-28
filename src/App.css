@@ -1,12 +1,12 @@
 body {
-  background: #828994;
   background-image: url("./background.svg");
+  background-position: center;
+  background-attachment: scroll;
 }
 
 .App {
-  background: transparent;
   color: #2d343c;
-  margin: 30px auto;
+  margin: 0 auto;
   width: 100%;
 }
 
