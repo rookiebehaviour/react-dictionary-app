@@ -6,8 +6,8 @@ function App() {
     <div className="App">
       <div className="container">
         <main>
-          <h1 className="text-center pt-2">Dictionary 📖</h1>
-          <Dictionary defaultKeyword="fall" />
+          <h1 className="text-center pt-2">Dictionary</h1>
+          <Dictionary defaultKeyword="confident" />
         </main>
         <footer className="text-center pb-5">
           <a href="https://github.com/rookiebehaviour/react-dictionary-app">
